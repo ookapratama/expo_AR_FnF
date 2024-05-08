@@ -1,10 +1,19 @@
 import React from "react";
-import type { ButtonProps } from "tamagui";
+import { Button as Btn } from "tamagui";
+import type { ButtonProps as BtnProps } from "tamagui";
 
-export const Button = ({ children, ...props }: ButtonProps) => {
+export const Button = ({ children, ...props }: BtnProps) => {
   return (
-    <Button backgroundColor="$primary" color="$white" size="$5" {...props}>
+    <Btn
+      backgroundColor="$primary"
+      color="$white"
+      borderRadius="$5"
+      size="$5"
+      {...props}
+    >
       {children}
-    </Button>
+    </Btn>
   );
 };
+
+export type ButtonProps = BtnProps;

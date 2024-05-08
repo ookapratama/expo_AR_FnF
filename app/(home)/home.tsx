@@ -1,47 +1,37 @@
-import { Text, View } from "@/components/Themed";
+import { Pressable, TouchableOpacity } from "react-native";
 import React from "react";
-import { XStack, YStack } from "tamagui";
-import { PlayCircle } from "@tamagui/lucide-icons";
-import { Image } from "tamagui";
-import { TouchableOpacity } from "react-native";
-import { Button } from "@/components/Button";
+import { AntDesign } from "@expo/vector-icons";
+import { View, XStack, YStack } from "tamagui";
+import { w } from "../../constant/responsive";
+import { Button } from "../../components/Button";
+import { Link } from "expo-router";
 
-const home = () => {
+const index = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      {/* <Button style={{  backgroundColor: 'green' }} icon={PlayCircle}>
-      </Button> */}
+    <View flex={1} justifyContent="center">
       <YStack>
-        <TouchableOpacity>
-          <Image
-            source={{
-              uri: require("../../assets/images/play-button.png"),
-              width: 350,
-              height: 350,
-            }}
-          />
-        </TouchableOpacity>
+        {/* AR Camera */}
+        <XStack justifyContent="center">
+          <Link href="/menu">
+            <AntDesign name="playcircleo" size={w(70)} color="black" />
+          </Link>
+        </XStack>
+        {/* <TouchableOpacity style={{ alignItems: "center" }}> */}
+        {/* </TouchableOpacity> */}
 
+        {/* Button Menu */}
         <XStack
-          backgroundColor={"red"}
-          justifyContent="space-between"
-          margin={30}
+          maxWidth={"100%"}
+          justifyContent="space-around"
+          marginVertical={80}
         >
           <Button>Petunjuk</Button>
-          {/* <Button>fffffff</Button> */}
-          {/* <Button backgroundColor={'#56CBF9'} color={'#fff'} fontWeight={'bold'}>Petunjuk</Button> */}
-          {/* <Button>Kuis</Button> */}
-          {/* <Button>Tentang</Button> */}
+          <Button>Kuis</Button>
+          <Button>Tentang</Button>
         </XStack>
       </YStack>
     </View>
   );
 };
 
-export default home;
+export default index;

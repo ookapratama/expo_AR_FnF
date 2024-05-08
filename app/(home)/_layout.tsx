@@ -1,16 +1,15 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { Stack } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
 
-const HomeLayout = () => {
+const Layout = () => {
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen
-        name="home"
-        options={{ headerShown: false, title: "home" }}
-      />
+    <Stack>
+      <Stack.Screen name="home" options={{ headerShown: false }} />
+      <Stack.Screen name="menu" options={{ headerTitle: "" }} />
+      <Stack.Screen name="detail_menu" options={{ headerShown: false }} />
     </Stack>
   );
 };
 
-export default HomeLayout;
+export default Layout;

@@ -1,4 +1,3 @@
-import { config } from "@tamagui/config/v3";
 import { createAnimations } from "@tamagui/animations-react-native";
 import { createInterFont } from "@tamagui/font-inter";
 import { createMedia } from "@tamagui/react-native-media-driver";
@@ -69,7 +68,7 @@ const animations = createAnimations({
   },
 });
 
-export const tamaguiConfig = createTamagui({
+const config = createTamagui({
   fonts: {
     heading: interFont,
     body: interFont,
@@ -96,8 +95,10 @@ export const tamaguiConfig = createTamagui({
   }),
   animations,
 });
-export default tamaguiConfig;
-export type Conf = typeof tamaguiConfig;
+
+export default config;
+export type Conf = typeof config;
+
 declare module "tamagui" {
   interface TamaguiCustomConfig extends Conf {}
 }
