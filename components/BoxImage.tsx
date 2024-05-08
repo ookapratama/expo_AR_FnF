@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, Text, View, YStack } from "tamagui";
 import { h, w } from "../constant/responsive";
+import ar_camera from "../app/(home)/detail_menu/ar_camera";
 
 type boxImageProps = {
   hewan?: string;
@@ -17,7 +18,12 @@ export const BoxImage = ({
   ...props
 }: boxImageProps) => {
   return (
-    <YStack marginVertical={16} justifyContent="center" alignItems="center">
+    <YStack
+      onPress={() => <ar_camera />}
+      marginVertical={16}
+      justifyContent="center"
+      alignItems="center"
+    >
       <View
         borderRadius={"$8"}
         width={w(36)}

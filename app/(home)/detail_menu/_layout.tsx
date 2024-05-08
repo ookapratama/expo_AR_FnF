@@ -14,6 +14,13 @@ const Layout = () => {
           headerShadowVisible: true,
         }}
       />
+      <Stack.Screen
+        name="ar_camera"
+        options={{
+          headerTitle: ``,
+          headerShadowVisible: true,
+        }}
+      />
     </Stack>
   );
 };
