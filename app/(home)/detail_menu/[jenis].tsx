@@ -1,4 +1,4 @@
-import { useLocalSearchParams } from "expo-router";
+import { Link, useLocalSearchParams } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { ScrollView, Text, View, XStack } from "tamagui";
 import { BoxImage } from "../../../components/BoxImage";
@@ -9,6 +9,7 @@ type jenisType = {
 
 const detail_menu = () => {
   const { jenis } = useLocalSearchParams<{ jenis: string }>();
+  const routeName  = '/detail_menu/ar_camera';
 
   const [render, setRender] = useState<string>();
 
@@ -23,18 +24,12 @@ const detail_menu = () => {
         flexWrap="wrap"
         flex={1}
       >
-        <BoxImage hewan="kitten" jenis="fauna" />
-        <BoxImage hewan="kitten" jenis="fauna" />
-        <BoxImage hewan="kitten" jenis="fauna" />
-        <BoxImage hewan="kitten" jenis="fauna" />
-        <BoxImage hewan="kitten" jenis="fauna" />
-        <BoxImage hewan="kitten" jenis="fauna" />
-        <BoxImage hewan="kitten" jenis="fauna" />
-        <BoxImage hewan="kitten" jenis="fauna" />
-        <BoxImage hewan="kitten" jenis="fauna" />
-        <BoxImage hewan="kitten" jenis="fauna" />
-        <BoxImage hewan="kitten" jenis="fauna" />
-        <BoxImage hewan="kitten" jenis="fauna" />
+        <Link href={routeName} asChild>
+          <BoxImage hewan="kitten" jenis={jenis} />
+        </Link>
+        <Link href={routeName} asChild>
+          <BoxImage hewan="kitten" jenis={jenis} />
+        </Link>
       </XStack>
     </ScrollView>
   );

@@ -1,11 +1,11 @@
 import React from "react";
 import { Image, Text, View, YStack } from "tamagui";
 import { h, w } from "../constant/responsive";
-import ar_camera from "../app/(home)/detail_menu/ar_camera";
+import ARCamera from "../app/(home)/detail_menu/ar_camera";
 
 type boxImageProps = {
   hewan?: string;
-  jenis: string;
+  jenis: string | undefined;
   tumbuhan?: string;
   extension?: "jpg" | "png" | "jpeg";
 };
@@ -17,9 +17,14 @@ export const BoxImage = ({
   extension,
   ...props
 }: boxImageProps) => {
+  const sourceImage: string | undefined =
+    hewan || tumbuhan
+      ? "../assets/images/kitten.jpg"
+      : "../assets/sample.png";
+
   return (
     <YStack
-      onPress={() => <ar_camera />}
+      onPress={() => <ARCamera />}
       marginVertical={16}
       justifyContent="center"
       alignItems="center"
@@ -33,7 +38,7 @@ export const BoxImage = ({
       >
         <Image
           source={{
-            uri: require(`../assets/images/kitten.jpg`),
+            uri: require("../assets/images/kitten.jpg"),
             width: w(36),
             height: h(18),
           }}

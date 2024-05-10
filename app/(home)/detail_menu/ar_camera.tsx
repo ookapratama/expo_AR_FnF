@@ -1,9 +1,9 @@
-import { CameraView, useCameraPermissions } from "expo-camera";
+import { CameraView, useCameraPermissions, Camera } from "expo-camera";
 import React, { useState } from "react";
 import { Text, View } from "tamagui";
 import { Button } from "../../../components/Button";
 
-const ar_camera = () => {
+const ARCamera = () => {
   const [facing, setFacing] = useState("back");
   const [permission, requestPermission] = useCameraPermissions();
 
@@ -28,11 +28,12 @@ const ar_camera = () => {
     <View flex={1} justifyContent="center">
       <CameraView style={{ flex: 1 }} facing={facing}>
         <View flex={1} flexDirection="row" backgroundColor="transparent">
-          <Button onPress={toggleCamera}>Flip Camera</Button>
+          {/* <Button onPress={toggleCamera}>Flip Camera</Button> */}
         </View>
       </CameraView>
+      {/* <Text>AR Camera</Text> */}
     </View>
   );
 };
 
-export default ar_camera;
+export default ARCamera;
