@@ -2,6 +2,11 @@ import { CameraView, useCameraPermissions, Camera } from "expo-camera";
 import React, { useState } from "react";
 import { Text, View } from "tamagui";
 import { Button } from "../../../components/Button";
+import * as THREE from 'three';
+import ExpoTHREE from 'expo-three';
+import Expo from 'expo';
+import { h, w } from "../../../constant/responsive";
+import { onContextCreate } from "../../../components/renderAR";
 
 const ARCamera = () => {
   const [facing, setFacing] = useState("back");
@@ -28,10 +33,8 @@ const ARCamera = () => {
     <View flex={1} justifyContent="center">
       <CameraView style={{ flex: 1 }} facing={facing}>
         <View flex={1} flexDirection="row" backgroundColor="transparent">
-          {/* <Button onPress={toggleCamera}>Flip Camera</Button> */}
         </View>
       </CameraView>
-      {/* <Text>AR Camera</Text> */}
     </View>
   );
 };
