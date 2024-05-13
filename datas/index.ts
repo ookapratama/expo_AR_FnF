@@ -1,2 +1,2 @@
-export * from "./fauna";
-export * from "./flora";
+export { dataFauna } from "./fauna";
+export { dataFlora } from "./flora";
