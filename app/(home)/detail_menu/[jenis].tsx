@@ -44,11 +44,15 @@ const detail_menu = () => {
           <Link
             key={jenis}
             // href={{ pathname: routeName }}
-            href={{ pathname: routeName, params: { src: item.src } }}
+            href={{
+              pathname: routeName,
+              params: { src: item.src, desc: item.deskripsi },
+            }}
             asChild
           >
             {jenis === "Flora" ? (
               <BoxImage
+                key={index}
                 index={index}
                 nama={item.nama}
                 src={item.src}
@@ -57,6 +61,7 @@ const detail_menu = () => {
               />
             ) : (
               <BoxImage
+                key={index}
                 index={index}
                 nama={item.nama}
                 src={item.src}

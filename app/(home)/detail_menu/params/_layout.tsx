@@ -1,12 +1,10 @@
-import { View, Text } from "react-native";
 import React from "react";
-import { Stack, useLocalSearchParams } from "expo-router";
+import { Link, Stack, useLocalSearchParams } from "expo-router";
 import { AntDesign } from "@expo/vector-icons";
+import { Button } from "tamagui";
 
 const Layout = () => {
-  const { jenis } = useLocalSearchParams<{ jenis: string }>();
-
- 
+  const { desc } = useLocalSearchParams<{ desc: string }>();
 
   return (
     <Stack>
@@ -16,8 +14,26 @@ const Layout = () => {
           headerTitle: ``,
           headerShadowVisible: true,
           headerRight: () => (
-            <AntDesign name="infocirlce" size={26} color="black" />
+            <Link
+              href={{
+                pathname: "/detail_menu/params/detail_object",
+                params: {desc : desc},
+              }}
+              asChild
+            >
+              <Button>
+                <AntDesign name="infocirlce" size={26} color="black" />
+              </Button>
+            </Link>
           ),
+        }}
+      />
+      <Stack.Screen
+        name="detail_object"
+        options={{
+          headerShown: false,
+          headerTitle: ``,
+          headerShadowVisible: true,
         }}
       />
     </Stack>

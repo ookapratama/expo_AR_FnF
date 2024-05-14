@@ -10,7 +10,7 @@ type boxImageProps = {
   src: string | undefined;
   desc: string;
   sourceImage?: string | undefined;
-  index: number
+  index: number;
 };
 
 export const BoxImage = ({
@@ -25,41 +25,34 @@ export const BoxImage = ({
   const sourceImage = src ? src : require("../assets/sample.png");
   console.log("box ", sourceImage);
   return (
-    <Link  href={''} asChild>
-      <YStack
-       
-        marginVertical={16}
-        justifyContent="center"
-        alignItems="center"
+    <YStack marginVertical={16} justifyContent="center" alignItems="center">
+      <View
+        style={{
+          shadowColor: "#000000",
+          shadowOffset: {
+            width: 0,
+            height: 4,
+          },
+          shadowOpacity: 0.19,
+          shadowRadius: 5.62,
+          elevation: 6,
+        }}
+        borderRadius={"$8"}
+        width={w(36)}
+        height={h(18)}
+        backgroundColor={"white"}
+        {...props}
       >
-        <View
-          style={{
-            shadowColor: "#000000",
-            shadowOffset: {
-              width: 0,
-              height: 4,
-            },
-            shadowOpacity: 0.19,
-            shadowRadius: 5.62,
-            elevation: 6,
-          }}
-          borderRadius={"$8"}
-          width={w(36)}
-          height={h(18)}
-          backgroundColor={"white"}
-          {...props}
-        >
-          <Image
-            source={sourceImage}
-            style={{ width: w(36), height: h(18) }}
-            resizeMode="contain"
-          />
-        </View>
-        <Text textTransform="capitalize" fontSize={16} marginTop={4}>
-          {nama}
-        </Text>
-      </YStack>
-    </Link>
+        <Image
+          source={sourceImage}
+          style={{ width: w(36), height: h(18) }}
+          resizeMode="contain"
+        />
+      </View>
+      <Text textTransform="capitalize" fontSize={16} marginTop={4}>
+        {nama}
+      </Text>
+    </YStack>
   );
 };
 

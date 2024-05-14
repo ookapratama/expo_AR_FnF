@@ -8,7 +8,7 @@ import {
   ViroImage,
 } from "@viro-community/react-viro";
 import { h, w } from "../../../../constant/responsive";
-import { useLocalSearchParams } from "expo-router";
+import { Link, useLocalSearchParams } from "expo-router";
 
 type dataProps = {
   src?: string | undefined;
@@ -16,16 +16,14 @@ type dataProps = {
   nama: string;
 };
 
-const ARCamera = ({  nama }: dataProps) => {
+const ARCamera = ({ nama }: dataProps) => {
   const [permission, requestPermission] = useCameraPermissions();
-  
-  const { src } = useLocalSearchParams<{ src: string }>();
 
-  console.log("ar camera 1: ", src);
+  const { src } = useLocalSearchParams<{ src: string }>();
 
   const sourceImage = src ? src : require("../../../../assets/sample.png");
 
-  console.log("ar camera : ", sourceImage);
+  // console.log("ar camera : ", sourceImage);
 
   if (!permission) {
     return <View flex={1} backgroundColor={"skyblue"} />;
@@ -43,36 +41,25 @@ const ARCamera = ({  nama }: dataProps) => {
   const ARImage = () => {
     return (
       <ViroARScene>
-        {/* //   <ViroText
-      //     text="Hello World"
-      //     position={[0, -3, -6]}
-      //     style={{ fontSize: 50 }}
-      //   /> */}
-
-        {/* <Viro360Image source={require("../../../assets/images/kitten.jpg")} /> */}
-
         <ViroImage
           position={[0, 0, -2]}
           resizeMode="ScaleToFit"
           placeholderSource={require("../../../../assets/sample.png")}
           source={sourceImage}
-          // source={{
-          //   uri: sourceImage,
-          //   width: w(36),
-          //   height: h(18),
-          // }}
         />
       </ViroARScene>
     );
   };
 
   return (
-    <ViroARSceneNavigator
-      initialScene={{
-        scene: ARImage,
-      }}
-      style={{ flex: 1 }}
-    />
+    <>
+      <ViroARSceneNavigator
+        initialScene={{
+          scene: ARImage,
+        }}
+        style={{ flex: 1 }}
+      />
+    </>
   );
 };
 
