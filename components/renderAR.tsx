@@ -1,18 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import {  GLView } from "expo-gl";
-import { Renderer } from "expo-three";
 import { ViroARScene, ViroImage } from "@viro-community/react-viro";
 
 const renderAR = () => {
-  const arSession = useRef(null);
-  const renderer = useRef(new Renderer({ gl: GLView }));
 
-  const [arReacy, setArReady] = useState(false);
-  const [scene, setScene] = useState(null);
-
-  useEffect(() => {
-    
-  }, []);
 
   <ViroARScene>
         {/* //   <ViroText
@@ -33,3 +24,5 @@ const renderAR = () => {
       </ViroARScene>
 
 };
+
+export default renderAR;

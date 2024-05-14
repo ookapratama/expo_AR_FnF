@@ -1,54 +1,65 @@
 import React from "react";
 import { Image, Text, View, YStack } from "tamagui";
 import { h, w } from "../constant/responsive";
-import ARCamera from "../app/(home)/detail_menu/ar_camera";
+// import ARCamera from "../app/(home)/detail_menu/ar_camera";
+import { Link } from "expo-router";
 
 type boxImageProps = {
-  hewan?: string;
+  nama?: string;
   jenis: string | undefined;
-  tumbuhan?: string;
-  extension?: "jpg" | "png" | "jpeg";
+  src: string | undefined;
+  desc: string;
+  sourceImage?: string | undefined;
+  index: number
 };
 
 export const BoxImage = ({
   jenis,
-  hewan = "",
-  tumbuhan = "",
-  extension,
+  nama = "",
+  src,
+  desc,
+  index,
   ...props
 }: boxImageProps) => {
-  const sourceImage: string | undefined =
-    hewan || tumbuhan
-      ? "../assets/images/kitten.jpg"
-      : "../assets/sample.png";
-
+  console.log("box 1", src);
+  const sourceImage = src ? src : require("../assets/sample.png");
+  console.log("box ", sourceImage);
   return (
-    <YStack
-      onPress={() => <ARCamera />}
-      marginVertical={16}
-      justifyContent="center"
-      alignItems="center"
-    >
-      <View
-        borderRadius={"$8"}
-        width={w(36)}
-        height={h(18)}
-        backgroundColor={"green"}
-        {...props}
+    <Link  href={''} asChild>
+      <YStack
+       
+        marginVertical={16}
+        justifyContent="center"
+        alignItems="center"
       >
-        <Image
-          source={{
-            uri: require("../assets/images/kitten.jpg"),
-            width: w(36),
-            height: h(18),
+        <View
+          style={{
+            shadowColor: "#000000",
+            shadowOffset: {
+              width: 0,
+              height: 4,
+            },
+            shadowOpacity: 0.19,
+            shadowRadius: 5.62,
+            elevation: 6,
           }}
-          resizeMode="cover"
-        />
-      </View>
-      <Text textTransform="capitalize" fontSize={16} marginTop={4}>
-        Hewan {hewan}
-      </Text>
-    </YStack>
+          borderRadius={"$8"}
+          width={w(36)}
+          height={h(18)}
+          backgroundColor={"white"}
+          {...props}
+        >
+          <Image
+            source={sourceImage}
+            style={{ width: w(36), height: h(18) }}
+            resizeMode="contain"
+          />
+        </View>
+        <Text textTransform="capitalize" fontSize={16} marginTop={4}>
+          {nama}
+        </Text>
+      </YStack>
+    </Link>
   );
 };
 

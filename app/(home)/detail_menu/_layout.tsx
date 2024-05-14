@@ -20,17 +20,14 @@ const Layout = () => {
         }}
       />
       <Stack.Screen
-        name="ar_camera"
+        name="params"
         options={{
-          headerTitle: ``,
-          headerShadowVisible: true,
-          headerRight: () => (
-            <AntDesign name="infocirlce" size={26} color="black" />
-          ),
+          headerShown : false,
         }}
       />
     </Stack>
   );
 };
+
 
 export default Layout;

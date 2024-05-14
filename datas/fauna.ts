@@ -41,7 +41,7 @@ export const dataFauna: faunaProps[] = [
   {
     nama: "Burung Merak",
     jenis: "Fauna",
-    src: require("../assets/object/fauna/cendrawasih.png"),
+    src: require("../assets/object/fauna/merak.png"),
     suara: undefined,
     deskripsi: "Burung Merak yang dikenal sebagai “hewan sombong” berkat keindahan bulu sayapnya ini ternyata masuk dalam daftar hewan langka yang terancam punah oleh IUCN. Mengutip berbagai sumber, burung khas Indonesia ini hanya tersisa sekitar 10.000-20.000 ekor merak dewasa. Salah satu penyebab utama binatang ini terancam punah adalah perburuan dan perdagangan ilegal. Bagaimana tidak? Burung ini sayap dengan bulu yang memiliki cirak bak mata berwarna biru, emas, merah, dan lainnya. Siapapun yang melihat sayapnya tentu akan terpana dengan kecantikannya. Saking indahnya, banyak orang dari berbagai penjuru dunia rela membayar mahal untuk bisa memelihara hewan ini di rumahnya. Akhirnya, IUCN menetapkan burung merak, khususnya merak biru menjadi salah satu hewan endemik yang harus dilindungi untuk mengurangi perdagangan hewan.",
   },
