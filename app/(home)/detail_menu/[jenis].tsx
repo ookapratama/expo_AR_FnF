@@ -7,10 +7,11 @@ import { BoxImage } from "../../../components/BoxImage";
 import { dataFauna, dataFlora } from "../../../datas";
 
 type dataProps = {
+  id:number;
   nama: string;
   jenis: string;
   src: string | undefined;
-  suara: undefined;
+  suara: string | undefined;
   deskripsi: string;
 };
 
@@ -46,7 +47,12 @@ const detail_menu = () => {
             // href={{ pathname: routeName }}
             href={{
               pathname: routeName,
-              params: { src: item.src, desc: item.deskripsi },
+              params: {
+                src: item.src,
+                desc: item.deskripsi,
+                voices: item.suara,
+                id: item.id
+              },
             }}
             asChild
           >

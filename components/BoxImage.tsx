@@ -21,9 +21,9 @@ export const BoxImage = ({
   index,
   ...props
 }: boxImageProps) => {
-  console.log("box 1", src);
+  // console.log("box 1", src);
   const sourceImage = src ? src : require("../assets/sample.png");
-  console.log("box ", sourceImage);
+  // console.log("box ", sourceImage);
   return (
     <YStack marginVertical={16} justifyContent="center" alignItems="center">
       <View

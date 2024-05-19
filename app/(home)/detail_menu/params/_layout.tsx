@@ -3,8 +3,13 @@ import { Link, Stack, useLocalSearchParams } from "expo-router";
 import { AntDesign } from "@expo/vector-icons";
 import { Button } from "tamagui";
 
+type paramProps = {
+  desc: string;
+  voices: undefined;
+}
+
 const Layout = () => {
-  const { desc } = useLocalSearchParams<{ desc: string }>();
+  const { desc, voices, id } = useLocalSearchParams();
 
   return (
     <Stack>
@@ -17,7 +22,7 @@ const Layout = () => {
             <Link
               href={{
                 pathname: "/detail_menu/params/detail_object",
-                params: {desc : desc},
+                params: {desc : desc, voice: voices, id: id},
               }}
               asChild
             >
