@@ -7,6 +7,13 @@ import { PortalProvider, TamaguiProvider } from "tamagui";
 import config from "../tamagui.config";
 import { useFonts } from "expo-font";
 
+export { ErrorBoundary } from "expo-router";
+
+export const unstable_settings = {
+  // Ensure that reloading on `/modal` keeps a back button present.
+  initialRouteName: '(home)',
+};
+
 const RootLayout = () => {
   const [loaded, error] = useFonts({
     Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
@@ -27,6 +34,7 @@ const RootLayout = () => {
         <PortalProvider>
           <Stack initialRouteName="(home)">
             <Stack.Screen name="(home)" options={{ headerShown: false }} />
+            <Stack.Screen name="(kuis)" options={{ headerShown: false }} />
           </Stack>
         </PortalProvider>
       </SafeAreaProvider>

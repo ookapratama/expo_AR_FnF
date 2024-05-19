@@ -10,7 +10,7 @@ type boxImageProps = {
   src: string | undefined;
   desc: string;
   sourceImage?: string | undefined;
-  index: number;
+  index?: number;
 };
 
 export const BoxImage = ({

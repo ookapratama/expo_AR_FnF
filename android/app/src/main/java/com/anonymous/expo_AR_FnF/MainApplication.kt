@@ -29,6 +29,10 @@ class MainApplication : Application(), ReactApplication {
               add(ReactViroPackage(ReactViroPackage.ViroPlatform.AR))
               add(ReactViroPackage(ReactViroPackage.ViroPlatform.OVR_MOBILE))
 
+              add(ReactViroPackage(ReactViroPackage.ViroPlatform.GVR))
+              add(ReactViroPackage(ReactViroPackage.ViroPlatform.AR))
+              add(ReactViroPackage(ReactViroPackage.ViroPlatform.OVR_MOBILE))
+
             }
 
           override fun getJSMainModuleName(): String = ".expo/.virtual-metro-entry"

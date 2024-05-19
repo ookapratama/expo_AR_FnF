@@ -42,7 +42,7 @@ const detail_menu = () => {
       >
         {datas.map((item, index) => (
           <Link
-            key={jenis}
+            key={index}
             // href={{ pathname: routeName }}
             href={{
               pathname: routeName,
@@ -52,8 +52,6 @@ const detail_menu = () => {
           >
             {jenis === "Flora" ? (
               <BoxImage
-                key={index}
-                index={index}
                 nama={item.nama}
                 src={item.src}
                 desc={item.deskripsi}
@@ -61,8 +59,6 @@ const detail_menu = () => {
               />
             ) : (
               <BoxImage
-                key={index}
-                index={index}
                 nama={item.nama}
                 src={item.src}
                 desc={item.deskripsi}

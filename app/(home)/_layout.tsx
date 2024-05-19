@@ -1,10 +1,9 @@
-import { View, Text } from "react-native";
 import React from "react";
-import { Stack, useLocalSearchParams } from "expo-router";
+import { Stack } from "expo-router";
 
 const Layout = () => {
   return (
-    <Stack>
+    <Stack initialRouteName="index">
       <Stack.Screen name="index" options={{ headerShown: false }} />
       <Stack.Screen name="menu" options={{ headerTitle: "" }} />
       <Stack.Screen name="detail_menu" options={{ headerShown: false }} />

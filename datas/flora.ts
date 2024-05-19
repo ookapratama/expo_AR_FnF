@@ -37,7 +37,7 @@ export const dataFlora: floraProps[] = [
     src: require("../assets/object/flora/semar.png"),
     suara: undefined,
     deskripsi:
-      ' ini dinamakan "Semar" karena banyak orang melihat tanaman ini mirip tokoh pewayangan, Wayang Semar, dengan perut besarnya. Keunikan tumbuhan langka ini terletak pada kemampuan dalam memangsa serangga seperti lalat, lebah, dan kumbang. Tak jarang, sebutan tumbuhan langka ini berbeda-beda di setiap daerah. Ada yang menyebutnya sebagai periuk monyet, kantok beruk dan banyak lagi. Mengutip Ilmu Pengetahuan Indonesia, kantong semar tersebar mulai dari Australia, Asia Tenggara, hingga Cina bagian selatan. Pulau Borneo (Kalimantan, Sarawak, Sabah, dan Brunei) tercatat sebagai pusat Kantong Semar paling banyak di dunia. Nyaris separuh atau 32 jenis spesies tumbuhan langka ini hidup di pulau besar ini.',
+      'ini dinamakan "Semar" karena banyak orang melihat tanaman ini mirip tokoh pewayangan, Wayang Semar, dengan perut besarnya. Keunikan tumbuhan langka ini terletak pada kemampuan dalam memangsa serangga seperti lalat, lebah, dan kumbang. Tak jarang, sebutan tumbuhan langka ini berbeda-beda di setiap daerah. Ada yang menyebutnya sebagai periuk monyet, kantok beruk dan banyak lagi. Mengutip Ilmu Pengetahuan Indonesia, kantong semar tersebar mulai dari Australia, Asia Tenggara, hingga Cina bagian selatan. Pulau Borneo (Kalimantan, Sarawak, Sabah, dan Brunei) tercatat sebagai pusat Kantong Semar paling banyak di dunia. Nyaris separuh atau 32 jenis spesies tumbuhan langka ini hidup di pulau besar ini.',
   },
   {
     nama: "Pohon Damar",

@@ -4,9 +4,16 @@ import { AntDesign } from "@expo/vector-icons";
 import { View, XStack, YStack } from "tamagui";
 import { w } from "../../constant/responsive";
 import { Button } from "../../components/Button";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 
 const index = () => {
+
+  const router = useRouter();
+  // const toKuis = () => {
+  //   console.log(segment);
+  //   return segment === "(kuis)" ? <KuisLayout /> : "";
+  // };
+
   return (
     <View flex={1} justifyContent="center">
       <YStack>
@@ -16,8 +23,6 @@ const index = () => {
             <AntDesign name="playcircleo" size={w(70)} color="black" />
           </Link>
         </XStack>
-        {/* <TouchableOpacity style={{ alignItems: "center" }}> */}
-        {/* </TouchableOpacity> */}
 
         {/* Button Menu */}
         <XStack
@@ -26,7 +31,7 @@ const index = () => {
           marginVertical={80}
         >
           <Button>Petunjuk</Button>
-          <Button>Kuis</Button>
+          <Button onPress={() => router.navigate('/(kuis)')}>Kuis</Button>
           <Button>Tentang</Button>
         </XStack>
       </YStack>
