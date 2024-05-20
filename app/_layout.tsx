@@ -3,16 +3,10 @@ import React, { useEffect } from "react";
 import { Stack } from "expo-router";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { PortalProvider, TamaguiProvider } from "tamagui";
-
 import config from "../tamagui.config";
 import { useFonts } from "expo-font";
 
 export { ErrorBoundary } from "expo-router";
-
-export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(home)',
-};
 
 const RootLayout = () => {
   const [loaded, error] = useFonts({
