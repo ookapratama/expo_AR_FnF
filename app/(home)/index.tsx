@@ -30,9 +30,9 @@ const index = () => {
           justifyContent="space-around"
           marginVertical={80}
         >
-          <Button>Petunjuk</Button>
+          <Button onPress={() => router.navigate('/(guide)')}>Petunjuk</Button>
           <Button onPress={() => router.navigate('/(kuis)')}>Kuis</Button>
-          <Button>Tentang</Button>
+          <Button onPress={() => router.navigate('/(about)')}>Tentang</Button>
         </XStack>
       </YStack>
     </View>

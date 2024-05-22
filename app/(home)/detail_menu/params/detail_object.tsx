@@ -8,32 +8,21 @@ import { Audio } from "expo-av";
 const dataSample = [
   // fauna
   require("../../../../assets/voices/fauna/komodo.mp3"),
-  require("../../../../assets/voices/fauna/kucing.mp3"),
-  require("../../../../assets/voices/fauna/cendrawasih.mp3"),
   require("../../../../assets/voices/fauna/harimau.mp3"),
-  require("../../../../assets/voices/fauna/merak.mp3"),
-  require("../../../../assets/voices/fauna/dugong.mp3"),
-  require("../../../../assets/voices/fauna/orangutan.mp3"),
+  require("../../../../assets/voices/fauna/cendrawasih.mp3"),
   require("../../../../assets/voices/fauna/badak.mp3"),
-  require("../../../../assets/voices/fauna/jalak.mp3"),
-  require("../../../../assets/voices/fauna/rusa.mp3"),
+  require("../../../../assets/voices/fauna/gajah.mp3"),
+  require("../../../../assets/voices/fauna/orangutan.mp3"),
   // flora
-  require("../../../../assets/voices/flora/bangkai.mp3"),
-  require("../../../../assets/voices/flora/edelweis.mp3"),
-  require("../../../../assets/voices/flora/cendana.mp3"),
   require("../../../../assets/voices/flora/semar.mp3"),
-  require("../../../../assets/voices/flora/damar.mp3"),
-  require("../../../../assets/voices/flora/anggrek.mp3"),
-  require("../../../../assets/voices/flora/tengkawang.mp3"),
-  require("../../../../assets/voices/flora/payung.mp3"),
-  require("../../../../assets/voices/flora/semut.mp3"),
-  require("../../../../assets/voices/flora/taxus.mp3"),
+  require("../../../../assets/voices/flora/rafflesia.mp3"),
+  require("../../../../assets/voices/flora/bangkai.mp3"),
+  require("../../../../assets/voices/flora/aqul.mp3"),
 ];
 
 const detail_object = () => {
   const { desc, voice, id } = useLocalSearchParams();
 
-  const sourceVoice = voice ? voice : dataSample;
 
   // console.log(
   //   "voice tes: ",
