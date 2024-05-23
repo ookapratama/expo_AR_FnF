@@ -1,6 +1,6 @@
 import { Link, useLocalSearchParams } from "expo-router";
 import React, { useEffect, useState } from "react";
-import { Text, View } from "tamagui";
+import { Text, View, YStack } from "tamagui";
 import { Button } from "../../../../components/Button";
 import { AntDesign } from "@expo/vector-icons";
 import { Audio } from "expo-av";
@@ -22,7 +22,6 @@ const dataSample = [
 
 const detail_object = () => {
   const { desc, voice, id } = useLocalSearchParams();
-
 
   // console.log(
   //   "voice tes: ",
@@ -65,12 +64,17 @@ const detail_object = () => {
       paddingHorizontal={40}
       justifyContent="center"
       alignItems="center"
+      backgroundColor={"#4EA5D9"}
     >
-      <Text fontSize={24}>Deskripsi</Text>
+      <YStack backgroundColor={'$white'} padding={10} paddingHorizontal={30} borderRadius={'$8'}>
+        <Text fontSize={28} fontWeight={"bold"} textAlign="center">
+          Deskripsi
+        </Text>
 
-      <Text marginVertical={30} fontSize={20} textAlign="justify">
-        {desc}
-      </Text>
+        <Text marginVertical={30} fontSize={20} textAlign="justify">
+          {desc}
+        </Text>
+      </YStack>
 
       <Button
         onPress={() => getVoice()}

@@ -6,9 +6,6 @@ import { AntDesign } from "@expo/vector-icons";
 const Layout = () => {
   const { jenis } = useLocalSearchParams<{ jenis: string }>();
 
-  const infoIcon = () => {
-    return <AntDesign name="infocirlce" size={24} color="black" />;
-  };
 
   return (
     <Stack>

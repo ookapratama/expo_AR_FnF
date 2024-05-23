@@ -34,7 +34,7 @@ const detail_menu = () => {
     fetchData();
   }, []);
   return (
-    <ScrollView>
+    <ScrollView backgroundColor={"#4EA5D9"}>
       <XStack
         justifyContent="space-around"
         marginVertical={24}

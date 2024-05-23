@@ -42,7 +42,7 @@ export const dataFauna: faunaProps[] = [
     nama: "Badak Bercula Satu",
     jenis: "Fauna",
     src: require("../assets/object/fauna/badak_cula.png"),
-    suara: require("../assets/voices/fauna/merak.mp3"),
+    suara: require("../assets/voices/fauna/badak.mp3"),
     deskripsi: "Badak bercula satu merupakan hewan endemik Indonesia, khususnya di wilayah Ujung Kulon Banten. Badak bercula satu merupakan hewan paling langka dan terancam punah. Hewan ini melewati masa reproduksi yang panjang, dalam 1 tahun hanya mampu melahirkan 1-2 ekor saja. Populasi badak bercula satu semakin berkurang setiap harinya akibat perburuan liar secara besar-besaran untuk mengambil culanya.",
   },
   {
@@ -51,7 +51,7 @@ export const dataFauna: faunaProps[] = [
     nama: "Gajah Sumatra",
     jenis: "Fauna",
     src: require("../assets/object/fauna/gajah.png"),
-    suara: require("../assets/voices/fauna/dugong.mp3"),
+    suara: require("../assets/voices/fauna/gajah.mp3"),
     deskripsi: "Gajah sumatra menjadi salah satu dari beberapa hewan terancam punah di Indonesia. Hewan dengan tinggi badan mencapai 1,7 hingga 2,6 meter ini mengalamai penurunan populasi sejalan dengan meningkatkannya laju kehilangan hutan di Sumatra. Gajah Sumatra kehilangan 70% habitat mereka dalam satu generasi. Penyebab utamanya tentu saja adalah alih fungsi hutan menjadi kawasan pertanian, pemukiman, perkebunan, dan hutan produksi. Karena kondisinya yang berada pada status kritis dan terancam punah, gajah sumatra menjadi salah satu hewan yang di lindungi keberadaannya. Di taman nasional bukit barisan Selatan (TNBBS), gajah Sumatra memiliki populasi yang tidak terlalu banyak, yaitu hanya sekitar 2.000 ekor",
   },
   {

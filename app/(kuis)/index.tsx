@@ -70,7 +70,7 @@ const index = () => {
 
 
   return (
-    <View flex={1} marginTop={w(25)} alignItems="center">
+    <View flex={1} backgroundColor={"#4EA5D9"} paddingTop={w(25)}  alignItems="center">
       <Text fontSize={32} textTransform="uppercase">
         Skor : {skor}
       </Text>

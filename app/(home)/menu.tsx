@@ -16,7 +16,7 @@ const Icons = (jenis: string) => {
 
 const menu = () => {
   return (
-    <View flex={1} justifyContent="center">
+    <View flex={1} justifyContent="center" backgroundColor={"#4EA5D9"}>
       <YStack justifyContent="center" alignItems="center" width={w(100)}>
         <Link
           style={{ marginBottom: 50 }}

@@ -26,11 +26,10 @@ const RootLayout = () => {
     <TamaguiProvider config={config} defaultTheme="light">
       <SafeAreaProvider>
         <PortalProvider>
-          <Stack initialRouteName="(home)">
+          <Stack screenOptions={{
+          }} initialRouteName="(home)">
             <Stack.Screen name="(home)" options={{ headerShown: false }} />
             <Stack.Screen name="(kuis)" options={{ headerShown: false }} />
-            <Stack.Screen name="(about)" options={{ headerShown: false }} />
-            <Stack.Screen name="(guide)" options={{ headerShown: false }} />
           </Stack>
         </PortalProvider>
       </SafeAreaProvider>
