@@ -1,13 +1,9 @@
-import { FlatList, Modal, Pressable, TouchableOpacity } from "react-native";
+import {  Modal } from "react-native";
 import React, { useState } from "react";
-import { AntDesign } from "@expo/vector-icons";
 import { Image, Text, View, XStack, YStack } from "tamagui";
 import { h, w } from "../../constant/responsive";
 import { Button } from "../../components/Button";
 import { Link, useRouter } from "expo-router";
-import Svg, { Path } from "react-native-svg";
-import { AlertGuide } from "../../components/AlertGuide";
-import { AlertDialog } from "tamagui";
 
 const index = () => {
   const router = useRouter();
