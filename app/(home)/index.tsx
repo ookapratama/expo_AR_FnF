@@ -1,4 +1,4 @@
-import {  Modal } from "react-native";
+import { ImageBackground, Modal } from "react-native";
 import React, { useState } from "react";
 import { Image, Text, View, XStack, YStack } from "tamagui";
 import { h, w } from "../../constant/responsive";
@@ -13,29 +13,40 @@ const index = () => {
   return (
     <>
       <View flex={1} backgroundColor={"#4EA5D9"} justifyContent="center">
-        <YStack>
-          {/* AR Camera */}
-          <YStack alignItems="center">
-            <Image
-              source={require("../../assets/text.png")}
-              width={w(80)}
-              resizeMode="contain"
-            />
-            <Link style={{ marginTop: -320 }} href="/menu">
+        <ImageBackground
+          source={require("../../assets/bg/home.png")}
+          resizeMode="cover"
+          style={{ flex: 1 }}
+        >
+          <YStack>
+            {/* AR Camera */}
+            <YStack alignItems="center">
               <Image
-                // source={sourceImage}
-                source={require("../../assets/play.png")}
-                style={{ width: 300 }}
-                resizeMode="repeat"
+                source={require("../../assets/text1.png")}
+                width={w(80)}
+                resizeMode="contain"
+                marginTop={w(40)}
               />
-            </Link>
-          </YStack>
+              <Link style={{ marginTop: w(-60) }} href="/menu">
+                <Image
+                  // source={sourceImage}
+                  source={require("../../assets/play.png")}
+                  style={{ width: 300 }}
+                  resizeMode="repeat"
+                />
+              </Link>
+            </YStack>
 
-          {/* Button Menu */}
+            {/* Button Menu */}
+          </YStack>
           <XStack
-            maxWidth={"100%"}
+            // maxWidth={"100%"}
+            marginBottom={30}
             justifyContent="space-around"
-            marginVertical={60}
+            position="absolute"
+            bottom={0}
+            left={0}
+            right={0}
           >
             <Button
               borderRadius={"$12"}
@@ -50,6 +61,7 @@ const index = () => {
                 height={h(10)}
               />
             </Button>
+
             <Button
               borderRadius={"$12"}
               backgroundColor={"$white"}
@@ -63,6 +75,7 @@ const index = () => {
                 height={h(10)}
               />
             </Button>
+
             <Button
               borderRadius={"$12"}
               backgroundColor={"$white"}
@@ -77,7 +90,7 @@ const index = () => {
               />
             </Button>
           </XStack>
-        </YStack>
+        </ImageBackground>
       </View>
 
       {/* modal 1 */}
@@ -146,26 +159,26 @@ const index = () => {
                 width={w(30)}
               />
             </YStack>
-              <Text paddingHorizontal={15} fontSize={24}>
-                Cara Penggunaan Aplikasi ini :
-              </Text>
+            <Text paddingHorizontal={15} fontSize={24}>
+              Cara Penggunaan Aplikasi ini :
+            </Text>
 
-              <Text paddingHorizontal={15} fontSize={20}>
-                1. Silahkan Pilih Tombol Play
-              </Text>
-              <Text paddingHorizontal={15} fontSize={20}>
-                2. Pilih kategori yang ingin dilihat
-              </Text>
-              <Text paddingHorizontal={15} fontSize={20}>
-                3. Pilih gambar yang ingin ditampilkan
-              </Text>
-              <Text paddingHorizontal={15} fontSize={20}>
-                4. Izinkan akses kamera untuk menampilkan objek gambar
-              </Text>
-              <Text paddingHorizontal={15} fontSize={20}>
-                5. Sudut kanan atas adalah icon untuk melihat deskripsi objek
-                yang dipilih
-              </Text>
+            <Text paddingHorizontal={15} fontSize={20}>
+              1. Silahkan Pilih Tombol Play
+            </Text>
+            <Text paddingHorizontal={15} fontSize={20}>
+              2. Pilih kategori yang ingin dilihat
+            </Text>
+            <Text paddingHorizontal={15} fontSize={20}>
+              3. Pilih gambar yang ingin ditampilkan
+            </Text>
+            <Text paddingHorizontal={15} fontSize={20}>
+              4. Izinkan akses kamera untuk menampilkan objek gambar
+            </Text>
+            <Text paddingHorizontal={15} fontSize={20}>
+              5. Sudut kanan atas adalah icon untuk melihat deskripsi objek yang
+              dipilih
+            </Text>
             <Button
               marginTop={40}
               onPress={() => setVisibleModal2(!visibleModal2)}

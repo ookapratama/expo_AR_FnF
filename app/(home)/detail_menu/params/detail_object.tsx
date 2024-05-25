@@ -4,6 +4,7 @@ import { Text, View, YStack } from "tamagui";
 import { Button } from "../../../../components/Button";
 import { AntDesign } from "@expo/vector-icons";
 import { Audio } from "expo-av";
+import { ImageBackground } from "react-native";
 
 const dataSample = [
   // fauna
@@ -61,36 +62,45 @@ const detail_object = () => {
   return (
     <View
       flex={1}
-      paddingHorizontal={40}
-      justifyContent="center"
       alignItems="center"
       backgroundColor={"#4EA5D9"}
     >
-      <YStack backgroundColor={'$white'} padding={10} paddingHorizontal={30} borderRadius={'$8'}>
-        <Text fontSize={28} fontWeight={"bold"} textAlign="center">
-          Deskripsi
-        </Text>
-
-        <Text marginVertical={30} fontSize={20} textAlign="justify">
-          {desc}
-        </Text>
-      </YStack>
-
-      <Button
-        onPress={() => getVoice()}
-        backgroundColor={"$white"}
-        shadowOpacity={5}
-        borderWidth={2}
-        padding={10}
-        borderRadius={50}
-        marginVertical={16}
+      <ImageBackground
+        source={require("../../../../assets/bg/deskripsi.png")}
+        resizeMode="cover"
+        style={{ flex: 1, justifyContent: "center", paddingHorizontal: 40 }}
       >
-        <AntDesign name="sound" size={24} color="black" />
-      </Button>
+        <YStack
+          backgroundColor={"$white"}
+          padding={10}
+          paddingHorizontal={30}
+          borderRadius={"$8"}
+        >
+          <Text fontSize={28} fontWeight={"bold"} textAlign="center">
+            Deskripsi
+          </Text>
 
-      <Link href="/menu" asChild>
-        <Button>Back</Button>
-      </Link>
+          <Text marginVertical={30} fontSize={20} textAlign="justify">
+            {desc}
+          </Text>
+        </YStack>
+
+        <Button
+          onPress={() => getVoice()}
+          backgroundColor={"$white"}
+          shadowOpacity={5}
+          borderWidth={2}
+          padding={10}
+          borderRadius={50}
+          marginVertical={16}
+        >
+          <AntDesign name="sound" size={24} color="black" />
+        </Button>
+
+        <Link href="/menu" asChild>
+          <Button>Back</Button>
+        </Link>
+      </ImageBackground>
     </View>
   );
 };
