@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { AlertDialog, Image, Text, View, XStack, YStack } from "tamagui";
+import React, { useEffect, useRef, useState } from "react";
+import { Image, Text, View, XStack, YStack } from "tamagui";
 import { h, w } from "../../constant/responsive";
 import { Button } from "../../components/Button";
 import { dataKuis } from "../../datas";
@@ -8,22 +8,88 @@ import { ImageBackground, Modal } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Audio } from "expo-av";
 
 const index = () => {
   const [kuis, setKuis] = useState(dataKuis);
 
-  const [chance, setChande] = useState(3);
+  const [chance, setChande] = useState(5);
   const [visibleModal, setVisibleModal] = useState(false);
-  const [timer, setTimer] = useState<number | undefined>(30);
+  const [timer, setTimer] = useState<number | undefined>(300);
 
   const [warna1, setWarna1] = useState("$grayscale600");
   const [warna2, setWarna2] = useState("$grayscale600");
   const [warna3, setWarna3] = useState("$grayscale600");
 
-  const [jawaban, setJawaban] = useState<boolean>();
   const [skor, setSkor] = useState(0);
+  const [sounds, setSound] = useState();
+  const getSound = useRef(new Audio.Sound());
+  const [statusSound, setStatusSound] = useState(false);
 
   const [indexActive, setIndexActive] = useState(0);
+
+  const getVoice = async () => {
+    // console.log("loading sound");
+    // const checkSound = await getSound.current.getStatusAsync();
+    // console.log(checkSound);
+    // if (checkSound.isLoaded === false) {
+    //   try {
+    //     console.log('first')
+    //     const result = await getSound.current.loadAsync(
+    //       require("../../assets/voices/backsound.mpeg")
+    //     );
+    //     console.log('second')
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    //   return;
+    // }
+    // return;
+
+    try {
+      const { sound } = await Audio.Sound.createAsync(
+        require("../../assets/voices/backsound.mpeg")
+      );
+      // console.log(sound);
+      setSound(sound);
+
+      console.log("Playing Sound");
+
+      await sound.playAsync();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const PlayAudio = async () => {
+    setStatusSound(false);
+    try {
+      const result = await getSound.current.getStatusAsync();
+      console.log(result);
+      if (result.isLoaded) {
+        if (result.isPlaying === false) {
+          getSound.current.playAsync();
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const PauseAudio = async () => {
+    setStatusSound(true);
+    try {
+      const result = await getSound.current.getStatusAsync();
+      console.log(result);
+      if (result.isLoaded) {
+        if (result.isPlaying === true) {
+          getSound.current.pauseAsync();
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const nextBtn = () => {
     setIndexActive((v) => v + 1);
@@ -89,6 +155,7 @@ const index = () => {
   };
 
   useEffect(() => {
+    // set timer kuis
     let interval = setInterval(() => {
       setTimer((v) => {
         console.log(v);
@@ -103,9 +170,23 @@ const index = () => {
         }
       });
     }, 1000);
-    isNaN(timer) ? setTimer(0) : '';
+
+    isNaN(timer) ? setTimer(0) : "";
     return () => clearInterval(interval);
   }, [timer]);
+
+  // handle backsound kuis
+  useEffect(() => {
+    getVoice();
+  }, []);
+  useEffect(() => {
+    return sounds
+      ? () => {
+          console.log("Unloading Sound");
+          sounds.unloadAsync();
+        }
+      : undefined;
+  }, [sounds]);
 
   return (
     <View flex={1} backgroundColor={"#4EA5D9"}>
@@ -123,7 +204,16 @@ const index = () => {
               size={50}
               color="black"
             />
+            {/* {statusSound ? ( */}
+            {/*  <MaterialCommunityIcons
+                 name="music-note-off"
+                 size={50}
+                 color="black"
+                 onPress={() => PlayAudio()}
+               /> */}
+            {/* ) : ( */}
             <MaterialCommunityIcons name="music-note" size={50} color="black" />
+            {/* )} */}
           </XStack>
           <XStack>
             <View position="relative" marginHorizontal={15}>
@@ -247,7 +337,9 @@ const index = () => {
               <YStack justifyContent="center" alignItems="center">
                 {chance === 0 || timer === 0 || isNaN(timer) ? (
                   <>
-                    <Text fontSize={24}>Kesempatan anda sudah habis,</Text>
+                    <Text fontSize={24} textAlign="center">
+                      Kuis sudah berakhir.{"\n"}Skor akhir {skor}
+                    </Text>
                     <XStack>
                       <Button
                         marginTop={20}
@@ -255,12 +347,12 @@ const index = () => {
                         onPress={() => {
                           setIndexActive(0);
                           setSkor(0);
-                          setChande(3);
+                          setChande(5);
                           setVisibleModal(!visibleModal);
                           setWarna1("$grayscale600");
                           setWarna2("$grayscale600");
                           setWarna3("$grayscale600");
-                          setTimer(30);
+                          setTimer(300);
                         }}
                       >
                         Kuis Lagi
