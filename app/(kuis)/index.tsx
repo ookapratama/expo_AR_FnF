@@ -13,7 +13,7 @@ import { Audio } from "expo-av";
 const index = () => {
   const [kuis, setKuis] = useState(dataKuis);
 
-  const [chance, setChande] = useState(5);
+  const [chance, setChande] = useState(3);
   const [visibleModal, setVisibleModal] = useState(false);
   const [timer, setTimer] = useState<number | undefined>(300);
 
@@ -322,7 +322,7 @@ const index = () => {
               backgroundColor={"$secondary"}
               onPress={() => {
                 setIndexActive(0);
-                setChande(5);
+                setChande(3);
                 setVisibleModal(!visibleModal);
                 setWarna1("$grayscale600");
                 setWarna2("$grayscale600");
@@ -358,7 +358,7 @@ const index = () => {
                         onPress={() => {
                           setIndexActive(0);
                           setSkor(0);
-                          setChande(5);
+                          setChande(3);
                           setVisibleModal(!visibleModal);
                           setWarna1("$grayscale600");
                           setWarna2("$grayscale600");
@@ -380,7 +380,7 @@ const index = () => {
                 ) : (
                   <>
                     <Text fontSize={24}>
-                      Kesmepatan anda tersisa {chance} lagi.
+                      Kesempatan anda tersisa {chance} lagi.
                     </Text>
 
                     <Button
