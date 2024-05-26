@@ -5,9 +5,10 @@ import { BoxImage } from "../../../components/BoxImage";
 
 // data static
 import { dataFauna, dataFlora } from "../../../datas";
+import { ImageBackground } from "react-native";
 
 type dataProps = {
-  id:number;
+  id: number;
   nama: string;
   jenis: string;
   src: string | undefined;
@@ -34,50 +35,56 @@ const detail_menu = () => {
     fetchData();
   }, []);
   return (
-    <ScrollView backgroundColor={"#4EA5D9"}>
-      <XStack
-        justifyContent="space-around"
-        marginVertical={24}
-        flexWrap="wrap"
-        flex={1}
-      >
-        {datas.map((item, index) => (
-          <Link
-            key={index}
-            // href={{ pathname: routeName }}
-            href={{
-              pathname: routeName,
-              params: {
-                src: item.src,
-                desc: item.deskripsi,
-                voices: item.suara,
-                id: item.id
-              },
-            }}
-            asChild
-          >
-            {jenis === "Flora" ? (
-              <BoxImage
-                nama={item.nama}
-                src={item.src}
-                desc={item.deskripsi}
-                jenis={jenis}
-              />
-            ) : (
-              <BoxImage
-                nama={item.nama}
-                src={item.src}
-                desc={item.deskripsi}
-                jenis={jenis}
-              />
-            )}
-          </Link>
-        ))}
-        {/* <Link href={{ pathname: routeName }} asChild>
+    <ImageBackground
+      source={require("../../../assets/bg/menu.png")}
+      resizeMode="cover"
+      style={{ flex: 1, justifyContent: "center" }}
+    >
+      <ScrollView>
+        <XStack
+          justifyContent="space-around"
+          marginVertical={24}
+          flexWrap="wrap"
+          flex={1}
+        >
+          {datas.map((item, index) => (
+            <Link
+              key={index}
+              // href={{ pathname: routeName }}
+              href={{
+                pathname: routeName,
+                params: {
+                  src: item.src,
+                  desc: item.deskripsi,
+                  voices: item.suara,
+                  id: item.id,
+                },
+              }}
+              asChild
+            >
+              {jenis === "Flora" ? (
+                <BoxImage
+                  nama={item.nama}
+                  src={item.src}
+                  desc={item.deskripsi}
+                  jenis={jenis}
+                />
+              ) : (
+                <BoxImage
+                  nama={item.nama}
+                  src={item.src}
+                  desc={item.deskripsi}
+                  jenis={jenis}
+                />
+              )}
+            </Link>
+          ))}
+          {/* <Link href={{ pathname: routeName }} asChild>
           <BoxImage hewan="kitten" jenis={jenis} />
         </Link> */}
-      </XStack>
-    </ScrollView>
+        </XStack>
+      </ScrollView>
+    </ImageBackground>
   );
 };
 

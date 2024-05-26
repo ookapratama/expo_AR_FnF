@@ -49,7 +49,7 @@ export const BoxImage = ({
           resizeMode="contain"
         />
       </View>
-      <Text textTransform="capitalize" fontSize={16} marginTop={4}>
+      <Text textTransform="capitalize"  fontWeight={'bold'} fontSize={16} marginTop={4}>
         {nama}
       </Text>
     </YStack>

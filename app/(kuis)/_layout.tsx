@@ -60,39 +60,9 @@ const KuisLayout = () => {
       <Stack.Screen
         name="index"
         options={{
+          headerShown:false,
           headerTitle: "",
-          headerLeft: () => (
-            <>
-             
-              <Entypo
-                style={{ marginHorizontal: 15 }}
-                onPress={() => router.navigate("/")}
-                name="home"
-                size={32}
-                color="black"
-              />
-            </>
-          ),
-          headerRight: () => (
-            <>
-              <View>
-                <Ionicons
-                  name="heart-sharp"
-                  size={40}
-                  color="black"
-                />
-                
-              </View>
-              <View  >
-                <Entypo
-                  style={{ position: "relative" }}
-                  name="stopwatch"
-                  size={40}
-                  color="black"
-                />
-              </View>
-            </>
-          ),
+          headerLeft: () => <></>,
         }}
       />
     </Stack>
