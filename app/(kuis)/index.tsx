@@ -54,7 +54,7 @@ const index = () => {
       setSound(sound);
 
       console.log("Playing Sound");
-
+      sound.setIsLoopingAsync(true);
       await sound.playAsync();
     } catch (error) {
       console.log(error);
@@ -318,9 +318,20 @@ const index = () => {
             >
               Next
             </Button>
-            <Link href={"(home)"} asChild>
-              <Button backgroundColor={"$secondary"}>Selesai</Button>
-            </Link>
+            <Button
+              backgroundColor={"$secondary"}
+              onPress={() => {
+                setIndexActive(0);
+                setChande(5);
+                setVisibleModal(!visibleModal);
+                setWarna1("$grayscale600");
+                setWarna2("$grayscale600");
+                setWarna3("$grayscale600");
+                setTimer(0);
+              }}
+            >
+              Selesai
+            </Button>
           </XStack>
         </YStack>
 
