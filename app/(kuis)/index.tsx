@@ -379,7 +379,7 @@ const index = () => {
                   </>
                 ) : (
                   <>
-                    <Text fontSize={24}>
+                    <Text textAlign="center" fontSize={24}>
                       Kesempatan anda tersisa {chance} lagi.
                     </Text>
 
