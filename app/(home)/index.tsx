@@ -20,7 +20,7 @@ const index = () => {
         >
           <YStack>
             {/* AR Camera */}
-            <YStack alignItems="center">
+            <YStack justifyContent="center" alignItems="center">
               <Image
                 source={require("../../assets/text1.png")}
                 width={w(80)}
@@ -29,9 +29,8 @@ const index = () => {
               />
               <Link style={{ marginTop: w(-60) }} href="/menu">
                 <Image
-                  // source={sourceImage}
                   source={require("../../assets/play.png")}
-                  style={{ width: 300 }}
+                  style={{ width: w(60) }}
                   resizeMode="repeat"
                 />
               </Link>
