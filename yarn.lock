@@ -4268,7 +4268,7 @@ expo-asset-utils@~3.0.0:
   resolved "https://registry.yarnpkg.com/expo-asset-utils/-/expo-asset-utils-3.0.0.tgz#2c7ddf71ba9efacf7b46c159c1c650114a2f14dc"
   integrity sha512-CgIbNvTqKqQi1lrlptmwoaCMu4ZVOZf8tghmytlor23CjIOuorw6cfuOqiqWkJLz23arTt91maYEU9XLMPB23A==
 
-expo-asset@~10.0.6:
+expo-asset@^10.0.6, expo-asset@~10.0.6:
   version "10.0.6"
   resolved "https://registry.yarnpkg.com/expo-asset/-/expo-asset-10.0.6.tgz#0894c4e824ce90e130852e6eecaba386e9f2e5aa"
   integrity sha512-waP73/ccn/HZNNcGM4/s3X3icKjSSbEQ9mwc6tX34oYNg+XE5WdwOuZ9wgVVFrU7wZMitq22lQXd2/O0db8bxg==
@@ -4366,6 +4366,11 @@ expo-router@~3.5.10:
     expo-splash-screen "0.27.4"
     react-native-helmet-async "2.0.4"
     schema-utils "^4.0.1"
+
+expo-screen-orientation@^7.0.5:
+  version "7.0.5"
+  resolved "https://registry.yarnpkg.com/expo-screen-orientation/-/expo-screen-orientation-7.0.5.tgz#0a517982151c6519fa4b10ce27047de39c1f92cf"
+  integrity sha512-1j0MzVzYpjKQo4BWowQ3ZYwC3OnddX/8k06C8VYTAxMyd8ou1k+rG4tm+GIV2n2RSzc3g7cfPlQwSYr3/SGmbg==
 
 expo-splash-screen@0.27.4:
   version "0.27.4"

@@ -189,7 +189,7 @@ const index = () => {
   }, [sounds]);
 
   return (
-    <View flex={1} backgroundColor={"#4EA5D9"}>
+    <View flex={1}  backgroundColor={"#4EA5D9"}>
       <ImageBackground
         source={require("../../assets/bg/kuis.png")}
         resizeMode="cover"
@@ -340,8 +340,8 @@ const index = () => {
             justifyContent="center"
             alignItems="center"
             backgroundColor={"$white"}
-            marginHorizontal={30}
-            marginVertical={350}
+            width={w(100)}
+            marginVertical={w(85)}
             flex={1}
           >
             <View>
